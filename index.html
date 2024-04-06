@@ -1,0 +1,82 @@
+<html>
+<head>
+  <title>Stock Recommendation System</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Stock Recommendation System</h1>
+    <div class="sidebar">
+      <h3>Ticker Symbols</h3>
+      <ul>
+        <li><a href="#">AAPL</a></li>
+        <li><a href="#">GOOGL</a></li>
+        <li><a href="#">AMZN</a></li>
+        <li><a href="#">ABVC</a></li>
+        <li><a href="#">TSLA</a></li>
+        <li><a href="#">MBG</a></li>
+        <li><a href="#">AMD</a></li>
+        <li><a href="#">MDIA</a></li>
+        <li><a href="#">MSFT</a></li>
+        
+      </ul>
+    </div>
+    <div class="main-content">
+      <div class="recommendation">
+        <h2>Enter Stock Symbol:</h2>
+        <input type="text" id="stock-symbol" name="stock-symbol" placeholder="e.g., NFLX">
+        <button onclick="getRecommendation()">Get Recommendation</button>
+        <p id="recommendation-result"></p>
+
+   <script>
+    document.getElementById("recommendationForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get the entered stock symbol
+      var stockSymbol = document.getElementById("stockSymbol").value.toUpperCase();
+
+      // Perform the recommendation logic here
+      var recommendation = getRecommendation(); // Using a function to get recommendation
+
+      // Display the recommendation
+      var resultElement = document.getElementById("recommendationResult");
+      resultElement.innerHTML = "<p>Recommendation for " + stockSymbol + ": " + recommendation + "</p>";
+    });
+
+    // Function to get recommendation
+    function getRecommendation() {
+      // Generate a random number between 0 and 1
+      var randomNum = Math.random();
+
+      // If randomNum is less than 0.5, recommend "Buy", otherwise recommend "Sell"
+      if (randomNum < 0.5) {
+        return "Buy";
+      } else {
+        return "Sell";
+      }
+    }
+  </script>
+
+      </div>
+      <div class="charts">
+        <h2>Stock Charts"https://www.cmcmarkets.com/en/trading-guides/stock-chart-patterns"</h2>
+        
+        
+      </div>
+    </div>
+    <div class="news-articles">
+      <h3>The S&P 500 rose 1.1%, making up most of the loss from the previous day and moving closer to its record high set last week. The benchmark index still posted its first weekly loss in three weeks.
+
+The Dow Jones Industrial Average rose 0.8% and the Nasdaq composite gained 1.2%.
+
+Technology companies accounted for a big share of the rally. Chipmaking giant Nvidia rose 2.4% and Google’s parent company, Alphabet, rose 1.3%.
+
+The gains were broad, with every sector in the S&P 500 finishing in the green.
+
+U.S. employers added a surprisingly strong 303,000 workers to their payrolls in March, according to a government report on Friday. The strong job market has helped fuel consumer spending and earnings growth for businesses, amounting to strong economic growth overall.</h3>
+      
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
